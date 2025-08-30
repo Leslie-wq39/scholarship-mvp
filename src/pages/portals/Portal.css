@@ -1,0 +1,52 @@
+/* src/pages/portals/Portal.css */
+.portal {
+  padding: calc(var(--header-height, 72px) + 20px) 1rem 2.5rem;
+  background:
+    radial-gradient(900px 400px at 0% 120%, color-mix(in oklab, var(--accent-color) 10%, transparent), transparent 70%),
+    var(--section-bg, #f8fafc);
+}
+
+.portal__hero { max-width: 1100px; margin: 0 auto 1rem; }
+.portal__eyebrow {
+  text-transform: uppercase; letter-spacing: .12em; font-size: .8rem;
+  color: var(--accent-color); font-weight: 700; margin: 0 0 .25rem;
+}
+.portal__title { font-size: clamp(1.8rem, 2.2vw + 1.2rem, 2.4rem); margin: 0 0 .4rem; }
+.portal__title span { color: var(--accent-color); }
+.portal__lead { color: var(--muted-text); margin: 0 0 .6rem; max-width: 70ch; }
+.portal__me { color: var(--muted-text); font-size: .95rem; }
+
+.portal__grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0,1fr));
+}
+@media (max-width: 1024px) { .portal__grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 640px)  { .portal__grid { grid-template-columns: 1fr; } }
+
+.card {
+  background: #fff; border: 1px solid var(--border-color);
+  border-radius: 12px; padding: 1rem;
+  box-shadow: var(--btn-shadow, 0 6px 20px rgba(0,0,0,.06));
+}
+.card h3 { margin: 0 0 .3rem; font-size: 1.1rem; }
+.card p  { margin: 0 0 .6rem; color: var(--text-color); }
+
+.panel {
+  max-width: 1100px; margin: 1rem auto 0; background:#fff; border:1px solid var(--border-color);
+  border-radius:12px; padding:1rem;
+}
+.dates { list-style:none; padding:0; margin:.2rem 0 .4rem; display:grid; gap:.5rem; }
+.dates li { display:flex; justify-content:space-between; border:1px dashed var(--border-color);
+  border-radius:10px; padding:.55rem .7rem; }
+.dates span { color: var(--muted-text); }
+
+.btn {
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:.65rem 1rem; border-radius:9999px; font-weight:700;
+  border:1.5px solid var(--border-color); text-decoration:none; cursor:pointer;
+  transition: transform .06s ease, opacity .15s ease, background .15s ease, color .15s ease;
+}
+.btn:hover { opacity:.95; }
+.btn:active { transform: translateY(1px); }
+.btn--primary { background: var(--accent-color); color:#fff; border-color: transparent; }
+.muted { color: var(--muted-text); }

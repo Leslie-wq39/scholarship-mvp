@@ -1,0 +1,61 @@
+// src/mock/sampleUsers.js
+export const sampleUsers = {
+  applicants: [
+    {
+      id: 1,
+      name: "Ama Boateng",
+      email: "ama.boateng@example.com",
+      role: "applicant",
+      program: "BSc Computer Science (KNUST)",
+      region: "Ashanti",
+      gpa: 3.6,
+      status: "Under Review"
+    },
+    {
+      id: 2,
+      name: "Daniel Mensah",
+      email: "daniel.mensah@example.com",
+      role: "applicant",
+      program: "BA Education (University of Cape Coast)",
+      region: "Central",
+      gpa: 3.2,
+      status: "Submitted"
+    }
+  ],
+  admins: [
+    {
+      id: 3,
+      name: "Sarah Owusu",
+      email: "sarah.owusu@uyznfoundation.org",
+      role: "admin",
+      position: "Program Officer",
+      permissions: ["review_applications", "shortlist", "manage_deadlines"]
+    },
+    {
+      id: 4,
+      name: "Michael Addo",
+      email: "michael.addo@uyznfoundation.org",
+      role: "admin",
+      position: "IT Systems Manager",
+      permissions: ["manage_portal", "database_access", "generate_reports"]
+    }
+  ],
+  partners: [
+    {
+      id: 5,
+      name: "AngloGold Ghana",
+      email: "anglogold.partners@uyznfoundation.org",
+      role: "partner",
+      focusArea: "STEM scholarships for mining communities",
+      access: ["impact_dashboard", "fund_reports", "demographics"]
+    },
+    {
+      id: 6,
+      name: "MTN Ghana Foundation",
+      email: "mtn.foundation@uyznfoundation.org",
+      role: "partner",
+      focusArea: "ICT and Entrepreneurship scholarships",
+      access: ["transparency_dashboard", "award_monitoring"]
+    }
+  ]
+};

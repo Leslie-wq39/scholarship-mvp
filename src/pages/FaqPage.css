@@ -1,0 +1,168 @@
+:root { --header-height: 72px; }
+
+/* FAQ Page — matches site tokens used elsewhere */
+.faqpage {
+  padding: calc(6rem + var(--header-height)) 1rem 3rem;
+  margin-top: calc(0.2 * var(--header-height));
+  background:
+    radial-gradient(1200px 500px at 0% 120%, color-mix(in oklab, var(--accent-color) 14%, transparent), transparent 70%),
+    var(--section-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* container */
+.faqpage__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* hero */
+.faqpage__hero {
+  padding: 3.25rem 0 2rem;
+  border-bottom: 1px solid var(--border-color);
+  background:
+    radial-gradient(1000px 520px at 100% -120px, color-mix(in oklab, var(--accent-color) 14%, transparent), transparent 70%),
+    linear-gradient(180deg, var(--alt-bg), var(--section-bg));
+}
+
+.faqpage__eyebrow {
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  font-weight: 700;
+  margin: 0 0 .35rem;
+}
+
+.faqpage__heading {
+  margin: 0 0 .5rem;
+  font-size: clamp(1.9rem, 2.2vw + 1.2rem, 2.6rem);
+  line-height: 1.15;
+  color: var(--primary-color);
+}
+.faqpage__heading span { color: var(--accent-color); }
+
+.faqpage__lead {
+  color: var(--muted-text);
+  max-width: 70ch;
+  margin: 0 0 1rem;
+}
+
+/* category pills */
+.faqpage__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: .75rem 0 .75rem;
+}
+.faqpage__pill {
+  display: inline-block;
+  padding: .5rem .9rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+  color: var(--text-color);
+  background: #fff;
+  transition: transform .06s ease, background-color .15s ease, border-color .15s ease;
+}
+.faqpage__pill:hover {
+  background: color-mix(in oklab, var(--accent-color) 9%, #fff);
+  border-color: color-mix(in oklab, var(--accent-color) 35%, var(--border-color));
+}
+.faqpage__pill:active { transform: translateY(1px); }
+
+/* expand/collapse */
+.faqpage__actions {
+  display: flex;
+  gap: .5rem;
+  margin: .25rem 0 0;
+}
+.faqpage__btn {
+  padding: .55rem .9rem;
+  border-radius: 9999px;
+  border: 2px solid var(--accent-color);
+  background: var(--accent-color);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity .15s ease, transform .06s ease, background .15s ease, color .15s ease;
+}
+.faqpage__btn:hover { opacity: .95; }
+.faqpage__btn:active { transform: translateY(1px); }
+.faqpage__btn--ghost {
+  background: transparent;
+  color: var(--accent-color);
+}
+
+/* sections */
+.faqpage__section {
+  padding: 2rem 0 0.75rem;
+}
+.faqpage__section + .faqpage__section { border-top: 1px solid var(--border-color); }
+
+.faqpage__section-title {
+  font-size: 1.35rem;
+  margin: 0 0 .75rem;
+  color: var(--primary-color);
+}
+
+/* items */
+.faqpage__item {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--alt-bg);
+  padding: .25rem .75rem;
+  transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
+  margin: 0 0 .7rem;
+}
+.faqpage__item[open] {
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  border-color: color-mix(in oklab, var(--accent-color) 30%, var(--border-color));
+}
+
+.faqpage__q {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-weight: 800;
+  padding: .95rem .25rem;
+  position: relative;
+  color: var(--text-color);
+}
+.faqpage__q::-webkit-details-marker { display: none; }
+
+/* chevron */
+.faqpage__q::after {
+  content: '▸';
+  margin-left: auto;
+  transition: transform .2s ease;
+}
+.faqpage__item[open] > .faqpage__q::after { transform: rotate(90deg); }
+
+.faqpage__a {
+  padding: 0 0 1rem .25rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+.faqpage__a ul { margin: .35rem 0 .35rem 1.1rem; }
+.faqpage__a li { margin: .15rem 0; }
+
+/* note */
+.faqpage__note {
+  margin: 1.25rem 0 3rem;
+  padding: .9rem 1rem;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  color: var(--muted-text);
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .faqpage__hero { padding: 2.25rem 0 1.5rem; }
+  .faqpage__actions { flex-wrap: wrap; }
+}

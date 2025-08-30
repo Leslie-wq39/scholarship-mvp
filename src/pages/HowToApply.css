@@ -1,0 +1,107 @@
+/* Make anchor jumps land below the fixed header */
+.apply-page section[id],
+.apply-page article[id],
+.apply-page aside[id] {
+  scroll-margin-top: calc(var(--header-height) + 16px);
+}
+
+/* (Optional) Smooth scrolling for hash links site-wide */
+html { scroll-behavior: smooth; }
+
+/* ---------- Hero ---------- */
+.apply-page .apply-hero {
+  padding: calc(6rem + var(--header-height)) 1rem 3.2rem;
+  margin-top: calc(0.2 * var(--header-height));
+  background:
+    radial-gradient(1200px 500px at 0% 120%, color-mix(in oklab, var(--accent-color) 14%, transparent), transparent 70%),
+    var(--section-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+.apply-page .apply-hero__inner { max-width: 1100px; margin: 0 auto; }
+.apply-page .apply-hero__title { font-size: 2.4rem; line-height: 1.12; margin: 0 0 .55rem; }
+.apply-page .apply-hero__title span { color: var(--accent-color); }
+.apply-page .apply-hero__lead { color: var(--muted-text); margin: 0 0 1rem; max-width: 60ch; }
+.apply-page .apply-hero__cta { display:flex; gap:.75rem; flex-wrap:wrap; }
+
+/* Breadcrumbs */
+.apply-page .crumbs {
+  display:flex; align-items:center; gap:.55rem;
+  color: var(--muted-text); font-weight:600; letter-spacing:.02em;
+  margin: -0.35rem 0 .75rem;
+}
+.apply-page .crumbs__home {
+  display:inline-flex; align-items:center; gap:.4rem;
+  color: var(--primary-color); text-decoration:none;
+  padding-bottom:.15rem; border-bottom:2px solid rgba(255,255,255,.35);
+}
+.apply-page .crumbs__icon { width:18px; height:18px; opacity:.85; }
+.apply-page .crumbs__sep { opacity:.65; color: var(--muted-text) }
+.apply-page .crumbs__current { color:var(--muted-text); font-weight: 600; }
+
+/* ---------- Shared container ---------- */
+.apply-page .apply-wrap { max-width: 1100px; margin: 0 auto; padding: 1.8rem 1rem; }
+
+/* ---------- Steps ---------- */
+.apply-page .apply-hd h2 { margin:0 0 .25rem; font-size:1.6rem; }
+.apply-page .apply-hd p { margin:0 0 1rem; color: var(--muted-text); }
+
+/* RENAMED/SCOPED */
+.apply-page .apply-steps__list {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem;
+}
+.apply-page .apply-step {
+  display:flex; gap:.8rem; align-items:flex-start;
+  border:1px solid var(--border-color); background:#fff; border-radius:12px; padding:1rem;
+}
+.apply-page .step__num {
+  flex:0 0 auto; width:34px; height:34px; border-radius:9999px;
+  display:grid; place-items:center; font-weight:800;
+  color:#fff; background: var(--accent-color);
+  box-shadow: 0 0 0 6px color-mix(in oklab, var(--accent-color) 18%, transparent);
+}
+.apply-page .step__body h3 { margin:.1rem 0 .25rem; font-size:1.1rem; }
+.apply-page .step__body p { margin:0 0 .35rem; color: var(--muted-text); }
+.apply-page .step__link { color: var(--accent-color); text-decoration: underline; }
+
+/* bullets renamed to avoid generic .bullets collisions */
+.apply-page .apply-bullets { margin:.2rem 0 0 1.1rem; }
+
+/* ---------- Tips + Dates ---------- */
+.apply-page .apply-tips { background: var(--section-bg); border-top:1px solid var(--border-color); }
+.apply-page .apply-tips-grid { display:grid; grid-template-columns: 1.4fr .8fr; gap:1rem; }
+
+.apply-page .apply-tips-card,
+.apply-page .apply-dates {
+  border:1px solid var(--border-color); background:#fff; border-radius:12px; padding:1rem;
+}
+.apply-page .apply-tips-card h2,
+.apply-page .apply-dates h2 { margin:0 0 .4rem; font-size:1.3rem; }
+
+.apply-page .tips__cta { margin-top:.75rem; display:flex; gap:.6rem; flex-wrap:wrap; }
+
+.apply-page .apply-dates__list { list-style:none; padding:0; margin:.2rem 0 .8rem; display:grid; gap:.5rem; }
+.apply-page .apply-dates__list li {
+  display:flex; justify-content:space-between; align-items:center;
+  border:1px dashed var(--border-color); border-radius:10px; padding:.55rem .7rem;
+}
+.apply-page .apply-dates__list span { color: var(--muted-text); }
+.apply-page .dates__btn { width:100%; }
+
+/* ---------- Ending CTA ---------- */
+.apply-page .apply-cta { padding: 1.6rem 1rem 2.2rem; }
+.apply-page .apply-cta__inner { text-align:center; }
+.apply-page .apply-cta__inner h2 { margin:0 0 .25rem; }
+.apply-page .apply-cta__inner p { margin:0 0 .8rem; color: var(--muted-text); }
+
+/* Buttons keep your existing global .btn styles; no changes needed */
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+  .apply-page .apply-steps__list { grid-template-columns: 1fr; }
+  .apply-page .apply-tips-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .apply-page .apply-hero { padding-top: calc(5rem + var(--header-height)); }
+  .apply-page .apply-hero__title { font-size: 2rem; }
+}

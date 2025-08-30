@@ -1,0 +1,98 @@
+/* src/pages/SignUp.css */
+:root { --header-height: 72px; }
+
+/* ---------- Hero ---------- */
+.signup-hero {
+  padding: calc(6rem + var(--header-height)) 1rem 3rem;
+  margin-top: calc(0.2 * var(--header-height));
+  background:
+    radial-gradient(1200px 500px at 0% 120%, color-mix(in oklab, var(--accent-color) 14%, transparent), transparent 70%),
+    var(--section-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+.signup-hero__inner { max-width: 1100px; margin: 0 auto; }
+.signup-hero__title { font-size: 2.4rem; line-height: 1.12; margin: 0 0 .55rem; }
+.signup-hero__title span { color: var(--accent-color); }
+.signup-hero__lead { color: var(--muted-text); margin: 0 0 1rem; max-width: 60ch; }
+
+/* Breadcrumbs (light on light for visibility) */
+.crumbs {
+  display:flex; align-items:center; gap:.55rem;
+  color: var(--muted-text); font-weight:600; letter-spacing:.02em;
+  margin:-.35rem 0 .75rem;
+}
+.crumbs__home { display:inline-flex; align-items:center; gap:.4rem; color: var(--primary-color); text-decoration:none; padding-bottom:.1rem; border-bottom:2px solid rgba(0,0,0,.12); }
+.crumbs__home:hover { color: var(--accent-color); border-color: var(--accent-color); }
+.crumbs__icon { width:18px; height:18px; opacity:.9; }
+.crumbs__sep { opacity:.6; }
+.crumbs__current { color: var(--muted-text); }
+
+/* ---------- Wrapper ---------- */
+.signup-wrap { max-width: 900px; margin: 0 auto; padding: 1.6rem 1rem 2.4rem; }
+
+/* ---------- Tabs ---------- */
+.signup-tabs { display:flex; gap:.5rem; background:#fff; border:1px solid var(--border-color); border-radius:12px; padding:.35rem; width:max-content; }
+.signup-tab {
+  border:1px solid transparent; background:transparent; border-radius:10px; padding:.55rem .9rem;
+  font-weight:700; cursor:pointer; color: var(--text-color);
+}
+.signup-tab.is-active {
+  background: color-mix(in oklab, var(--accent-color) 12%, #fff);
+  border-color: color-mix(in oklab, var(--accent-color) 35%, var(--border-color));
+  color: var(--primary-color);
+}
+
+/* ---------- Panel ---------- */
+.signup-panel { margin-top: 1rem; border:1px solid var(--border-color); background:#fff; border-radius:12px; padding:1rem; }
+.signup-panel__hd h2 { margin:.1rem 0 .25rem; font-size:1.4rem; }
+.muted { color: var(--muted-text); }
+
+/* ---------- Form ---------- */
+.su-form { display:grid; gap:.85rem; margin-top:.75rem; }
+.su-field { display:block; }
+.su-label { display:block; font-weight:700; font-size:.9rem; margin:0 0 .25rem; }
+.su-input {
+  width:100%; height:44px; border-radius:10px; border:1.5px solid var(--border-color); background:#fff;
+  padding:.6rem .9rem; outline:none; transition: border-color .15s, box-shadow .15s;
+}
+.su-input:focus {
+  border-color: color-mix(in oklab, var(--accent-color) 55%, var(--border-color));
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent-color) 18%, transparent);
+}
+.su-help { display:block; margin-top:.25rem; color: var(--muted-text); font-size:.8rem; }
+
+.su-check { display:flex; align-items:center; gap:.45rem; font-size:.95rem; }
+.su-check a { color: var(--accent-color); }
+
+.su-actions { display:flex; align-items:center; gap:.9rem; flex-wrap:wrap; }
+
+/* Notices */
+.su-notice { margin-top:.35rem; padding:.7rem 1rem; border-radius:10px; font-weight:600; }
+.su-notice--ok { color:#065f46; background:#ecfdf5; border:1px solid #a7f3d0; }
+.su-notice--err { color:#7f1d1d; background:#fef2f2; border:1px solid #fecaca; }
+
+/* Perks list */
+.signup-bullets { margin:.8rem 0 0 1.1rem; line-height:1.6; }
+
+/* Notes */
+.signup-notes { margin-top: 1.1rem; border-top:1px dashed var(--border-color); padding-top:.9rem; }
+.signup-notes h3 { margin:0 0 .35rem; font-size:1.05rem; }
+.signup-notes ul { margin:.2rem 0 0 1.1rem; }
+
+/* ---------- Buttons (scoped) ---------- */
+.btn {
+  display:inline-flex; align-items:center; justify-content:center;
+  height:44px; padding:0 1.2rem; border-radius:9999px; font-weight:700;
+  border:1.5px solid var(--border-color); text-decoration:none; cursor:pointer;
+  transition: transform .06s ease, opacity .15s ease, background .15s ease, color .15s ease;
+}
+.btn:hover { opacity:.95; }
+.btn:active { transform: translateY(1px); }
+.btn--primary { background: var(--accent-color); color:#fff; border-color:transparent; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 560px) {
+  .signup-hero { padding-top: calc(5rem + var(--header-height)); }
+  .signup-hero__title { font-size: 2rem; }
+  .signup-tabs { width:100%; justify-content:space-between; }
+}

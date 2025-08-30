@@ -1,0 +1,119 @@
+/* Root design tokens */
+:root {
+  --primary-color: #003366;        /* Deep corporate blue */
+  --secondary-color: #0066cc;      /* Brighter, modern blue */
+  --accent-color: #00a3e0;         /* Cyan highlight */
+  --bg-color: #f9fafb;             /* Page background */
+  --section-bg: #ffffff;           /* Default section */
+  --alt-bg: #eef2f7;               /* For alternating blocks */
+  --text-color: #1f2937;           /* Main body text */
+  --muted-text: #6b7280;           /* Dimmed secondary text */
+  --border-color: #e5e7eb;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --btn-radius: 9999px;
+  --btn-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Box-sizing & base resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+
+/* Remove default list styles */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Link reset */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Image reset */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Form elements inherit font */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* Utility for hidden assistive text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/*----------------------------------------------
+  Container for consistent max-width and centering
+-----------------------------------------------*/
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/*----------------------------------------------
+  Responsive Breakpoints
+-----------------------------------------------*/
+
+/* Mobile: up to 767px */
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+/* Tablet: 768px–1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* Desktop: 1024px and up */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+/* Large Desktop: 1280px and up */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
